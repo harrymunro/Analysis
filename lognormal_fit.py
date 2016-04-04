@@ -7,7 +7,7 @@ import seaborn as sns
 
 
 # Import data
-dat = np.loadtxt("dwell.txt")
+dat = np.loadtxt("x.txt")
 
 n, bins, patches = plt.hist(dat, bins=25, normed=True)
 
