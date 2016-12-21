@@ -49,7 +49,7 @@ def single_linear():
 # two variable linear regression
 def multiple_linear(series1, series2):
     slope, intercept, r_value, p_value, std_err = stats.linregress(series1, series2)
-    return r_value
+    return r_value**2 # r squared
 
 # decision tree regression (prone to overfitting!)
 def tree(X, y):
