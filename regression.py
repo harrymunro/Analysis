@@ -33,19 +33,28 @@ X = np.array([x3, x4, x5])
 X = X.T
 
 # lasoo linear regression
-reg = linear_model.Lasso(alpha = 0.1)
-reg.fit(X, y)
-lassoo_score = reg.score(X, y)
+def lasoo_linear(X, y):
+    reg = linear_model.Lasso(alpha = 0.1)
+    reg.fit(X, y)
+    lassoo_score = reg.score(X, y)
+    return lassoo_score
 
 # ordinary multiple linear regression
-reg = linear_model.LinearRegression()
-reg.fit(X, y)
-ordinary_linear_score = reg.score(X, y)
+def single_linear():
+    reg = linear_model.LinearRegression()
+    reg.fit(X, y)
+    ordinary_linear_score = reg.score(X, y)
+    return ordinary_linear_score
 
 # two variable linear regression
-slope, intercept, r_value, p_value, std_err = stats.linregress(df['BOARDERS AND ALIGHTERS'],df['DWELL TIME'])
+def multiple_linear(series1, series2):
+    slope, intercept, r_value, p_value, std_err = stats.linregress(series1, series2)
+    return r_value
 
 # decision tree regression (prone to overfitting!)
-reg = tree.DecisionTreeRegressor()
-reg = reg.fit(X, y)
-tree_score = reg.score(X, y)
+def tree(X, y):
+    reg = tree.DecisionTreeRegressor()
+    reg = reg.fit(X, y)
+    tree_score = reg.score(X, y)
+    return tree_score
+ 
